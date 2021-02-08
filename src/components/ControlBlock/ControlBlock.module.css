@@ -1,0 +1,45 @@
+.container {
+    height: 10%;
+    background-color: #8ad4d6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 0 5px black;
+}
+
+.leftSide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.rightSide {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
+.header {
+    color: white;
+    text-shadow: 0 0 5px black;
+    margin-right: 20px;
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 5px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    width: 300px;
+}
+
+.input::placeholder {
+    color: white;
+    font-style: italic;
+}

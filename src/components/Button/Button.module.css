@@ -1,0 +1,28 @@
+.button {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    transition: box-shadow .3s;
+    box-shadow: 0 0 3px black;
+    width: 90px;
+}
+
+.white {
+    background-color: white;
+    color: #0f8688;
+}
+
+.green {
+    background-color: #0f8688;
+    color: white;
+}
+
+.button:hover {
+    box-shadow: 0 0 7px black;
+    cursor: pointer;
+}
+
+.button:active{
+    box-shadow: none;
+}

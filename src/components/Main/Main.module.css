@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "a b"
+                         "c b";
+    height: 90%;
+    padding: 5px;
+}
+
+.today {
+    grid-area: a;
+}
+
+.days {
+    grid-area: c;
+}
+
+.geo {
+    grid-area: b;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}

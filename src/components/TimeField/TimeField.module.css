@@ -1,0 +1,39 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr .2fr 1fr .2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'a a a a a'
+                         'b c d e f';
+    height: 100%;
+    width: 300px;
+}
+
+.date {
+    grid-area: a;
+}
+
+.hours {
+    grid-area: b;
+}
+
+.divider1 {
+    grid-area: c;
+}
+
+.minutes {
+    grid-area: d;
+}
+
+.divider2 {
+    grid-area: e;
+}
+
+.seconds {
+    grid-area: f;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
