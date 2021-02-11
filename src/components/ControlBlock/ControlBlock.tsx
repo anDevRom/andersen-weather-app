@@ -2,27 +2,32 @@ import React from 'react'
 import styles from './ControlBlock.module.css'
 import Button from "../Button/Button";
 import {useDispatch, useSelector} from "react-redux";
-import {changeLanguage, changeTempParam} from "../../store/app/appActions";
+import {changeLanguage, changeTempParam, fetchBackground} from "../../store/app/appActions";
 import { RootState } from '../../store/rootReducer';
+import SearchForm from '../SearchForm/SearchForm';
+import {setLocation} from "../../store/location/locationActions";
 
 const ControlBlock = () => {
     const dispatch = useDispatch()
     const isEnglish = useSelector((state: RootState) => state.app.isEnglish)
     const isCelsius = useSelector((state: RootState) => state.app.isCelsius)
 
-    const changeLanguageHandler = () => dispatch(changeLanguage())
-    const changeTempParamHandler = () => dispatch(changeTempParam())
-    const changeBackgroundHandler = () => {}
+    const changeLanguageHandler = () => {
+        localStorage.setItem('lang', String(!isEnglish ? 'en' : 'ru'))
+        dispatch(changeLanguage(!isEnglish))
+    }
+    const changeTempParamHandler = () => {
+        localStorage.setItem('temp', String(!isCelsius ? 'c' : 'f'))
+        dispatch(changeTempParam(!isCelsius))
+    }
+    const changeBackgroundHandler = () => dispatch(fetchBackground())
+    const submitHandler = (value: string) => dispatch(setLocation(value))
 
     return (
         <div className={styles.container}>
             <div className={styles.leftSide}>
                 <h1 className={styles.header}>Weather App &#176;</h1>
-                <input
-                    placeholder={isEnglish ? 'Choose place' : 'Выберите место'}
-                    className={styles.input}
-                    type="text"
-                />
+                <SearchForm isEnglish={isEnglish} submit={submitHandler}/>
             </div>
             <div className={styles.rightSide}>
                 <Button value={isEnglish ? 'Background' : 'Фон'}

@@ -1,6 +1,44 @@
 .container {
     width: 100%;
     height: 100%;
-    background-color: #c9e3df;
+    background-color: rgba(255, 255, 255, .7);
     border-radius: 5px;
+    display: grid;
+    grid-template-rows: 8fr 1fr;
+    grid-template-areas: 'a'
+                         'b';
+}
+
+.map {
+    grid-area: a;
+    padding: 10px;
+}
+
+.geo {
+    grid-area: b;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'c d'
+                         'e f';
+}
+
+.longitudeHeader {
+    grid-area: c;
+    padding: 5px
+}
+
+.latitudeHeader {
+    grid-area: e;
+    padding: 5px;
+}
+
+.longitudeValue {
+    grid-area: d;
+    padding: 5px
+}
+
+.latitudeValue {
+    grid-area: f;
+    padding: 5px
 }

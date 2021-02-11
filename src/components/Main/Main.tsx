@@ -3,9 +3,17 @@ import styles from './Main.module.css';
 import TodayBlock from "../TodayBlock/TodayBlock";
 import DaysBlock from "../DaysBlock/DaysBlock";
 import GeoBlock from "../GeoBlock/GeoBlock";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../store/rootReducer";
+import {fetchWeather} from "../../store/weather/weatherActions";
 
 const Main = () => {
+    const dispatch = useDispatch()
+    const coordinates = useSelector((state: RootState) => state.location.geoData.coordinates)
 
+    if (coordinates) {
+        dispatch(fetchWeather(coordinates))
+    }
 
     return (
         <div className={styles.container}>

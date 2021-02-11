@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './TimeField.module.css'
 import {format} from 'date-fns'
 import {enGB, ru} from "date-fns/locale"
+import {timeValueTransform, upperFirstLetter} from "../../utils";
 
 class TimeField extends React.Component<any, any> {
     constructor(props: {isEnglish: boolean}) {
@@ -40,22 +41,24 @@ class TimeField extends React.Component<any, any> {
         return (
             <div className={styles.container}>
                 <div className={styles.date + ' ' + styles.cell}>
-                    {this.state.date}
+                    {
+                        upperFirstLetter(this.state.date)
+                    }
                 </div>
                 <div className={styles.hours + ' ' + styles.cell}>
-                    {this.state.time.hours}
+                    {timeValueTransform(this.state.time.hours)}
                 </div>
                 <div className={styles.divider1 + ' ' + styles.cell}>
                     :
                 </div>
                 <div className={styles.minutes + ' ' + styles.cell}>
-                    {this.state.time.minutes}
+                    {timeValueTransform(this.state.time.minutes)}
                 </div>
                 <div className={styles.divider2 + ' ' + styles.cell}>
                     :
                 </div>
                 <div className={styles.seconds + ' ' + styles.cell}>
-                    {this.state.time.seconds}
+                    {timeValueTransform(this.state.time.seconds)}
                 </div>
             </div>
         )

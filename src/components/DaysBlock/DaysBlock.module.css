@@ -1,6 +1,49 @@
 .container {
     width: 100%;
     height: 100%;
-    background-color: #c9e3df;
+    background-color: rgba(255, 255, 255, .7);
     border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 'a b c'
+                         'd e f';
+}
+
+.first {
+    grid-area: a;
+}
+
+.second {
+    grid-area: b;
+}
+
+.third {
+    grid-area: c;
+}
+
+.firstData {
+    grid-area: d;
+}
+
+.secondData {
+    grid-area: e;
+}
+
+.thirdData {
+    grid-area: f;
+}
+
+.cellTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cellBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

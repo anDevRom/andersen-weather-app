@@ -6,6 +6,8 @@
                          "c b";
     height: 90%;
     padding: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .today {

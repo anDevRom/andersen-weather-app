@@ -3,12 +3,12 @@ import styles from './TodayBlock.module.css'
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/rootReducer";
 import TimeField from '../TimeField/TimeField';
+import TodayWeather from '../TodayWeather/TodayWeather';
 
 const TodayBlock = () => {
-    const city = useSelector((state: RootState) => state.location.location.city)
-    const country = useSelector((state: RootState) => state.location.location.country)
     const isEnglish = useSelector((state: RootState) => state.app.isEnglish)
-
+    const city = useSelector((state: RootState) => state.location.geoData[isEnglish ? 'cityEN' : 'cityRU'])
+    const country = useSelector((state: RootState) => state.location.geoData[isEnglish ? 'countryEN' : 'countryRU'])
 
     return (
         <div className={styles.container}>
@@ -20,7 +20,7 @@ const TodayBlock = () => {
                 <TimeField isEnglish={isEnglish}/>
             </div>
             <div className={styles.weather}>
-                Weather
+                <TodayWeather />
             </div>
         </div>
     )

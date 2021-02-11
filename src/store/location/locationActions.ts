@@ -1,7 +1,26 @@
-import {FETCH_LOCATION, SET_LOCATION} from "./locationTypes";
+import {CHANGE_MAP_VIEWPORT, FETCH_LOCATION, SET_GEO_DATA, SET_LOCATION} from "./locationTypes";
+import {IGeoData} from "../../interfaces/IGeoData";
+import {IViewport} from "../../interfaces/IViewport";
 
 export const fetchLocation = () => ({type: FETCH_LOCATION})
-export const setLocation = (data: {city: string, country: string}) => ({
-    type: SET_LOCATION,
-    payload: data
-})
+
+export const setLocation = (city: string) => {
+    return {
+        type: SET_LOCATION,
+        payload: city
+    }
+}
+
+export const setGeoData = (data: IGeoData) => {
+    return {
+        type: SET_GEO_DATA,
+        payload: data
+    }
+}
+
+export const changeMapViewport = (viewport: IViewport) => {
+    return {
+        type: CHANGE_MAP_VIEWPORT,
+        payload: viewport
+    }
+}

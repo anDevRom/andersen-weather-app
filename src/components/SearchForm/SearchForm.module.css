@@ -1,0 +1,15 @@
+.input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 5px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    width: 300px;
+}
+
+.input::placeholder {
+    color: white;
+    font-style: italic;
+}
