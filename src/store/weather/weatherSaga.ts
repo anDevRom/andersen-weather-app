@@ -9,10 +9,10 @@ export function* weatherWatcher() {
 }
 
 async function requestWeather(query: string) {
-    const en = await fetchData(`http://api.weatherapi.com/v1/current.json?key=4561c5cd7b6f4a87898134601210702&q=${query}`)
-    const ru = await fetchData(`http://api.weatherapi.com/v1/current.json?key=4561c5cd7b6f4a87898134601210702&q=${query}&lang=ru`)
+    const en = await fetchData(`https://api.weatherapi.com/v1/current.json?key=4561c5cd7b6f4a87898134601210702&q=${query}`)
+    const ru = await fetchData(`https://api.weatherapi.com/v1/current.json?key=4561c5cd7b6f4a87898134601210702&q=${query}&lang=ru`)
 
-    const forecast = await fetchData(`http://api.weatherapi.com/v1/forecast.json?key=4561c5cd7b6f4a87898134601210702&q=${query}&days=4`)
+    const forecast = await fetchData(`https://api.weatherapi.com/v1/forecast.json?key=4561c5cd7b6f4a87898134601210702&q=${query}&days=4`)
 
     return {
         en,
