@@ -7,6 +7,7 @@ import {changeMapViewport} from "../../store/location/locationActions";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kZXZyb20iLCJhIjoiY2treG82NGFpNTRiZjJwcXQ5Y3E5MDNhciJ9.SJYOvB1s69BxXCFfy_iQJQ'
+// "mapbox-gl": "^2.1.1"
 
 const Map = () => {
     const dispatch = useDispatch()
