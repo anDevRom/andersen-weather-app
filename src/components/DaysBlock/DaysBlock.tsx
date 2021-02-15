@@ -16,17 +16,17 @@ const DaysBlock = () => {
         <div className={styles.container}>
             <div className={styles.first + ' ' + styles.cellTop}>
                 {
-                    upperFirstLetter(format(addDays(FIRST_DAY), 'EEEE', {locale: isEnglish ? enGB : ru}))
+                    upperFirstLetter(format(addDays(FIRST_DAY), 'EEEE d LLLL', {locale: isEnglish ? enGB : ru}))
                 }
             </div>
             <div className={styles.second + ' ' + styles.cellTop}>
                 {
-                    upperFirstLetter(format(addDays(SECOND_DAY), 'EEEE', {locale: isEnglish ? enGB : ru}))
+                    upperFirstLetter(format(addDays(SECOND_DAY), 'EEEE d LLLL', {locale: isEnglish ? enGB : ru}))
                 }
             </div>
             <div className={styles.third + ' ' + styles.cellTop}>
                 {
-                    upperFirstLetter(format(addDays(THIRD_DAY), 'EEEE', {locale: isEnglish ? enGB : ru}))
+                    upperFirstLetter(format(addDays(THIRD_DAY), 'EEEE d LLLL', {locale: isEnglish ? enGB : ru}))
                 }
             </div>
             <div className={styles.firstData + ' ' + styles.cellBottom}>

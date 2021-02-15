@@ -7,5 +7,9 @@ export interface IGeoData {
     dms: {
         lat: string,
         lng: string,
+    },
+    mapViewport: {
+        longitude: number,
+        latitude: number
     }
 }

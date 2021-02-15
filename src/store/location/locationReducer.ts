@@ -1,5 +1,5 @@
 import {IAction} from "../../interfaces/IAction";
-import {CHANGE_MAP_VIEWPORT, SET_GEO_DATA} from "./locationTypes";
+import {CHANGE_VIEWPORT, SET_GEO_DATA} from "./locationTypes";
 
 const initialState = {
     geoData: {
@@ -11,11 +11,11 @@ const initialState = {
         dms: {
             lat: '',
             lng: '',
+        },
+        mapViewport: {
+            longitude: 0,
+            latitude: 0
         }
-    },
-    viewport: {
-        latitude: 0,
-        longitude: 0
     }
 }
 
@@ -33,16 +33,31 @@ export const locationReducer = (state = initialState, action: IAction) => {
                     dms: {
                         lat: action.payload.dms.lat,
                         lng: action.payload.dms.lng,
+                    },
+                    mapViewport: {
+                        longitude: action.payload.mapViewport.longitude,
+                        latitude: action.payload.mapViewport.latitude
                     }
                 }
             }
 
-        case CHANGE_MAP_VIEWPORT:
+        case CHANGE_VIEWPORT:
             return {
                 ...state,
-                viewport: {
-                    latitude: action.payload.latitude,
-                    longitude: action.payload.longitude
+                geoData: {
+                    cityEN: state.geoData.cityEN,
+                    cityRU: state.geoData.cityRU,
+                    countryEN: state.geoData.countryEN,
+                    countryRU: state.geoData.countryRU,
+                    coordinates: state.geoData.coordinates,
+                    dms: {
+                        lat: state.geoData.dms.lat,
+                        lng: state.geoData.dms.lng,
+                    },
+                    mapViewport: {
+                        longitude: action.payload.longitude,
+                        latitude: action.payload.latitude
+                    }
                 }
             }
         default: return state
